@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Star Wars - Express</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hot Resturaunt</title>
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+
 <body>
-<div class="row">
-    <div class="col-12">
-      <div class="card mb-4">
-        <div class="card-header">
-          <h3><strong></strong></h3>
-        </div>
-        <div class="card-body">
-          <input type="text" id="character-search" class="form-control" />
-          <br />
-          <div class="text-right">
-            <button
-              type="submit"
-              class="btn btn-primary btn-md"
-              id="search-btn">
-              <span class="fa fa-search"></span> 
-            </button>
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h1 class="text-center">Hot Resturant</h1>
+
+      <hr />
+      <div class="text-center">
+        
+        <a href="">
+          <button class="btn btn-danger btn-lg">
+            <span class="text-center">Reservations</span>
+          </button>
+        </a>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="jumbotron">
+        <div class="row">
+          <div class="col-12">
+            <div class="card mb-4">
+              <div class="card-header">
+                <h3>Curent Reservation</h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="container-fluid">
+      <div class="jumbotron">
+        <div class="row">
+          <div class="col-12">
+            <div class="card mb-4">
+              <div class="card-header">
+                <h3>Waiting List</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       </div>
+    <a href="/api/tables">API table Link</a>
+    <a href="/api/waitlist">API Waitlist Link</a>
+
   <script>
     
     fetch(`/api/tables`, {
@@ -61,4 +88,4 @@
       }
     })
   </script>
-</body>
+  </body>
