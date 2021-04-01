@@ -52,6 +52,49 @@
       </div>
       <a href="/api/tables">API table Link</a>
       <a href="/api/waitlist">API Waitlist Link</a>
+    <script type="text/javascript">
+      
+    const addBtn = document.getElementById('add-btn');
+    
+    // Question: What is "e" short for?
+    addBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Question: What does this code do?
+      let name = document.getElementById('name').value.trim();
+      let phone = document.getElementById('phone').value.trim();
+      let email = document.getElementById('email').value.trim();
+      let id = document.getElementById('uniqueId').value.trim();
+      
+      let newTable = {
+        name: name,
+        phone: phone,
+        email: email,
+        id: id,
+      };
+
+      // Question: What does this code do??
+      fetch('/api/table', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newTable),
+      })
+        .then((response) =>  {
+          if(response === "True"){
+            alert(`Yay, you are officially booked!`);
+          }
+          else{
+            alert("Sorry you are on the wait list");
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+    });
+  </script>
     </body>
 
     
+
