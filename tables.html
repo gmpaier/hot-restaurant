@@ -26,4 +26,39 @@
           </div>
         </div>
       </div>
-    </body>
+  <script>
+    
+    fetch(`/api/tables`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+
+            for(let i = 0; i < data.length; i++){
+
+            }
+
+            
+          })
+          .catch((error) => {
+            console.error(error);
+    });
+
+    fetch('/api/waitlist', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'applicaiton/json',
+        },
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      for(let i = 0; i < data.length; i++){
+        
+      }
+    })
+  </script>
+</body>
